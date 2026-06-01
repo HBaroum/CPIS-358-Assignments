@@ -1,0 +1,96 @@
+<%@ Master Language="C#" AutoEventWireup="true" %>
+
+<script runat="server">
+    protected string CurrentUserName
+    {
+        get
+        {
+            if (Session["FullName"] == null) return "Guest";
+            return Session["FullName"].ToString();
+        }
+    }
+
+    protected bool IsHomePage
+    {
+        get { return Page.AppRelativeVirtualPath.ToLower().Contains("home.aspx"); }
+    }
+
+    protected string ActiveClass(string pageName)
+    {
+        return Page.AppRelativeVirtualPath.ToLower().Contains(pageName.ToLower()) ? "active-link" : "";
+    }
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        bool isLoggedIn = Session["UserID"] != null;
+        lnkLogin.Visible    = !isLoggedIn;
+        lnkSignup.Visible   = !isLoggedIn;
+        lnkLogout.Visible   = isLoggedIn;
+
+        // Active link classes
+        lnkHome.CssClass      = ActiveClass("home.aspx");
+        lnkDashboard.CssClass = ActiveClass("dashboard.aspx");
+        lnkAbout.CssClass     = ActiveClass("about.aspx");
+        if (!isLoggedIn)
+        {
+            lnkLogin.CssClass  = ActiveClass("login.aspx");
+            lnkSignup.CssClass = ActiveClass("signup.aspx");
+        }
+
+        projectImageSection.Visible = IsHomePage;
+    }
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <h1>
+                <a href="Home.aspx" style="color:white;text-decoration:none;">StudySync</a>
+            </h1>
+            <p>Find students with the same course, goal, and free time</p>
+            <p class="user-line">Current user: <%= CurrentUserName %></p>
+        </header>
+
+        <nav class="menu">
+            <asp:HyperLink ID="lnkHome"      runat="server" NavigateUrl="Home.aspx"      Text="Home"></asp:HyperLink>
+            <asp:HyperLink ID="lnkLogin"     runat="server" NavigateUrl="Login.aspx"     Text="Login"></asp:HyperLink>
+            <asp:HyperLink ID="lnkSignup"    runat="server" NavigateUrl="Signup.aspx"    Text="Sign Up"></asp:HyperLink>
+            <asp:HyperLink ID="lnkDashboard" runat="server" NavigateUrl="Dashboard.aspx" Text="Dashboard / CRUD"></asp:HyperLink>
+            <asp:HyperLink ID="lnkAbout"     runat="server" NavigateUrl="About.aspx"     Text="About Us"></asp:HyperLink>
+            <asp:HyperLink ID="lnkLogout"    runat="server" NavigateUrl="Logout.aspx"    Text="Logout"></asp:HyperLink>
+        </nav>
+
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
+        <!-- Project Image: only visible on Home.aspx -->
+        <asp:Panel ID="projectImageSection" runat="server">
+            <section class="image-section compact-image">
+                <h2>Project Image</h2>
+                <p>Click the image to go to the About Us page.</p>
+                <img src="Images/photo1.jpg" alt="Study Group" usemap="#projectmap" class="main-image" />
+                <map name="projectmap" id="projectmap">
+                    <area shape="rect" coords="0,0,500,300" href="About.aspx" alt="About Us" />
+                </map>
+            </section>
+        </asp:Panel>
+
+        <footer>
+            <p>&copy; 2026 StudySync &mdash; CPIS-358 Group Project</p>
+        </footer>
+    </form>
+
+    <!-- Dark Mode Toggle Button -->
+    <button type="button" id="darkToggleBtn" class="dark-toggle-btn" onclick="toggleDarkMode()">Dark Mode</button>
+
+    <script src="Scripts/script.js"></script>
+</body>
+</html>

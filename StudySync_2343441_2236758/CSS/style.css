@@ -1,0 +1,978 @@
+/* ========================================
+   General Style
+   ======================================== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f7fb;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* ========================================
+   Dark Mode
+   ======================================== */
+body.dark-mode {
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+}
+
+body.dark-mode header {
+    background-color: #16213e;
+}
+
+body.dark-mode .menu {
+    background-color: #0f3460;
+}
+
+body.dark-mode .image-section,
+body.dark-mode .table-section,
+body.dark-mode .article-section,
+body.dark-mode .about-section,
+body.dark-mode .form-container,
+body.dark-mode .welcome-box,
+body.dark-mode .info-box {
+    background-color: #16213e;
+    color: #e0e0e0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .card {
+    background: #0f3460;
+    color: #e0e0e0;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+}
+
+body.dark-mode th {
+    background-color: #0f3460;
+}
+
+body.dark-mode table,
+body.dark-mode th,
+body.dark-mode td {
+    border-color: #444;
+}
+
+body.dark-mode form input,
+body.dark-mode form select,
+body.dark-mode form textarea {
+    background-color: #0f3460;
+    color: #e0e0e0;
+    border-color: #555;
+}
+
+body.dark-mode form input::placeholder,
+body.dark-mode form textarea::placeholder {
+    color: #aaa;
+}
+
+body.dark-mode footer {
+    background-color: #16213e;
+}
+
+body.dark-mode .note {
+    background-color: #0f3460;
+    border-left-color: #4a9eff;
+    color: #e0e0e0;
+}
+
+body.dark-mode .overlay-box {
+    background-color: rgba(22, 33, 62, 0.92);
+    color: #e0e0e0;
+}
+
+body.dark-mode .dark-toggle-btn {
+    background-color: #f0c040;
+    color: #1a1a2e;
+}
+
+body.dark-mode .dark-toggle-btn:hover {
+    background-color: #d4a800;
+}
+
+body.dark-mode .session-info-box {
+    background-color: #0f3460;
+    border-color: #2d89ef;
+}
+
+body.dark-mode .cookie-info-box {
+    background-color: #2a1f00;
+    border-color: #f0a500;
+}
+
+body.dark-mode label {
+    color: #ccc;
+}
+
+/* ========================================
+   Dark Mode Toggle Button
+   ======================================== */
+.dark-toggle-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    background-color: #1f5fa8;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 18px;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: background-color 0.3s, transform 0.2s;
+    width: auto;
+    margin: 0;
+}
+
+.dark-toggle-btn:hover {
+    background-color: #17497f;
+    transform: scale(1.05);
+}
+
+/* ========================================
+   Header & Nav
+   ======================================== */
+header {
+    background-color: #2d89ef;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    transition: background-color 0.3s;
+}
+
+.user-line {
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.menu {
+    background-color: #1f5fa8;
+    text-align: center;
+    padding: 12px;
+    transition: background-color 0.3s;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    padding: 6px 10px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.menu a:hover {
+    background-color: rgba(255,255,255,0.2);
+    text-decoration: none;
+}
+
+.menu a.active-link {
+    background-color: rgba(255,255,255,0.3);
+    border-bottom: 2px solid white;
+}
+
+/* ========================================
+   Hero Section
+   ======================================== */
+.hero {
+    position: relative;
+    background: url("../Images/photo2.jpg") no-repeat center;
+    background-size: cover;
+    height: 300px;
+}
+
+.overlay-box {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 12px;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* ========================================
+   Content Sections
+   ======================================== */
+.image-section,
+.table-section,
+.article-section,
+.about-section,
+.form-container {
+    background-color: white;
+    width: 85%;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.compact-image {
+    text-align: center;
+}
+
+.main-image {
+    width: 100%;
+    max-width: 500px;
+    border: 3px solid #2d89ef;
+    border-radius: 10px;
+}
+
+/* ========================================
+   Info Boxes (Session data / Cookie status)
+   ======================================== */
+.info-box {
+    width: 85%;
+    margin: 20px auto;
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.session-info-box {
+    background-color: #f0f8ff;
+    border: 1px solid #2d89ef;
+}
+
+.session-info-box h3 {
+    color: #2d89ef;
+    margin-top: 0;
+}
+
+.cookie-info-box {
+    background-color: #fffbf0;
+    border: 1px solid #f0a500;
+}
+
+.cookie-info-box h3 {
+    color: #c07800;
+    margin-top: 0;
+}
+
+.info-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.info-table th {
+    text-align: left;
+    padding: 8px 14px;
+    background-color: #dde4f0;
+    border: 1px solid #c0cce0;
+    color: #333;
+    font-weight: 600;
+}
+
+.info-table td {
+    padding: 8px 14px;
+    border: 1px solid #ddd;
+    color: #444;
+}
+
+.info-table tr:hover td {
+    background-color: #f5f8ff;
+}
+
+/* ========================================
+   Tables / GridView
+   ======================================== */
+table,
+.grid {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table, th, td,
+.grid th, .grid td {
+    border: 1px solid #dde4f0;
+}
+
+th,
+.grid th {
+    background-color: #2d89ef;
+    color: white;
+}
+
+th, td,
+.grid th, .grid td {
+    padding: 10px 14px;
+    text-align: center;
+}
+
+tr:nth-child(even) td {
+    background-color: #f8fbff;
+}
+
+tr:hover td {
+    background-color: #eef3ff;
+}
+
+/* ========================================
+   Forms, Labels & Inputs
+   ======================================== */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 12px;
+    color: #444;
+    font-size: 0.95rem;
+}
+
+form input,
+form select,
+form textarea {
+    margin-bottom: 5px;
+    padding: 10px 12px;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 0.95rem;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #2d89ef;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(45, 137, 239, 0.15);
+}
+
+input[type="submit"],
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #1f5fa8;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s, transform 0.2s;
+    width: auto;
+    margin-right: 8px;
+    margin-top: 8px;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #17497f;
+    transform: scale(1.03);
+}
+
+.btn-primary {
+    background-color: #2d89ef;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1a6dcc;
+}
+
+.btn-danger {
+    background-color: #e55a5a;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #555f66;
+}
+
+.radio-group input {
+    width: auto;
+    margin-right: 5px;
+    margin-bottom: 0;
+}
+
+/* ========================================
+   Password Strength Bar
+   ======================================== */
+.password-strength-bar {
+    height: 8px;
+    border-radius: 4px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    background-color: #e0e0e0;
+    transition: background-color 0.4s, width 0.4s;
+    width: 100%;
+    overflow: hidden;
+}
+
+.password-strength-bar .bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    width: 0%;
+    transition: width 0.4s, background-color 0.4s;
+}
+
+.strength-label {
+    font-size: 12px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+/* ========================================
+   Footer
+   ======================================== */
+footer {
+    background-color: #2d89ef;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    margin-top: 30px;
+    transition: background-color 0.3s;
+}
+
+/* ========================================
+   Utility & Status Classes
+   ======================================== */
+.highlight {
+    color: #2d89ef;
+    font-weight: bold;
+}
+
+.card {
+    background: white;
+    padding: 18px;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s, box-shadow 0.2s;
+    min-width: 220px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+}
+
+.card-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.button-row,
+.search-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.search-row input[type="text"] {
+    max-width: 380px;
+}
+
+.success-message {
+    display: block;
+    color: #27ae60;
+    font-weight: bold;
+    margin: 10px 0;
+    padding: 8px 12px;
+    background-color: #eafaf1;
+    border-left: 4px solid #27ae60;
+    border-radius: 4px;
+}
+
+.error-message {
+    display: block;
+    color: #c0392b;
+    font-weight: bold;
+    margin: 6px 0;
+}
+
+.note {
+    display: block;
+    background-color: #eef6ff;
+    border-left: 4px solid #2d89ef;
+    padding: 10px 14px;
+    margin-bottom: 15px;
+    border-radius: 0 6px 6px 0;
+    transition: background-color 0.3s, border-color 0.3s;
+    color: #444;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.welcome-box {
+    background-color: #ffffff;
+    padding: 25px;
+    margin: 25px auto;
+    width: 85%;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* ========================================
+   Home – Sessions Table
+   ======================================== */
+.sessions-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    margin-top: 12px;
+}
+
+.sessions-table th {
+    background-color: #2d89ef;
+    color: #fff;
+    padding: 11px 14px;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.sessions-table td {
+    padding: 10px 14px;
+    text-align: center;
+    border-bottom: 1px solid #e0e6f0;
+    vertical-align: middle;
+}
+
+.sessions-table tr:last-child td { border-bottom: none; }
+.sessions-table tr:hover td     { background-color: #f0f6ff; }
+
+/* ── join buttons ── */
+.btn-join {
+    background-color: #2d89ef;
+    color: #fff;
+    border: none;
+    padding: 6px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: background 0.2s;
+    margin: 0;
+}
+.btn-join:hover { background-color: #1a6dcc; }
+
+.btn-leave {
+    background-color: #e55a5a;
+    color: #fff;
+    border: none;
+    padding: 6px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: background 0.2s;
+    margin: 0;
+}
+.btn-leave:hover { background-color: #c0392b; }
+
+.btn-owner, .btn-already-joined {
+    background-color: #777;
+    color: #fff;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    cursor: not-allowed;
+    margin: 0;
+}
+
+.btn-join-login {
+    background-color: #aaa;
+    color: #fff;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* ── joined badge ── */
+.joined-badge {
+    display: inline-block;
+    background-color: #e6f4ea;
+    color: #2e7d32;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+/* ── student-count pill ── */
+.count-pill {
+    display: inline-block;
+    background-color: #eef3ff;
+    color: #2d89ef;
+    font-weight: 700;
+    font-size: 0.92rem;
+    padding: 3px 12px;
+    border-radius: 14px;
+    min-width: 28px;
+}
+
+/* ── no-sessions notice ── */
+.no-sessions-notice {
+    text-align: center;
+    color: #888;
+    padding: 22px;
+    font-style: italic;
+}
+
+/* ========================================
+   GridView link buttons
+   ======================================== */
+.grid a, .grid span {
+    color: #1f5fa8;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 2px 6px;
+}
+
+.grid a:hover {
+    text-decoration: underline;
+    color: #e55a5a;
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+@media (max-width: 768px) {
+    .image-section,
+    .table-section,
+    .article-section,
+    .about-section,
+    .form-container,
+    .welcome-box,
+    .info-box {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .overlay-box {
+        left: 15px;
+        top: 20px;
+        right: 15px;
+    }
+
+    .menu a {
+        margin: 0 8px;
+        font-size: 0.9rem;
+    }
+
+    .search-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-row input[type="text"] {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .grid-scroll-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+    }
+
+    .grid {
+        min-width: 600px;
+    }
+}
+
+/* ========================================
+   Image Slider
+   ======================================== */
+.slider-section {
+    background-color: white;
+    width: 85%;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    position: relative;
+}
+
+.slide.active {
+    display: block;
+    animation: fadeSlide 0.6s ease;
+}
+
+@keyframes fadeSlide {
+    from { opacity: 0; transform: scale(1.02); }
+    to   { opacity: 1; transform: scale(1);    }
+}
+
+.slide img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(31, 95, 168, 0.78);
+    color: white;
+    padding: 10px 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+}
+
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin-top: 14px;
+}
+
+.slider-btn {
+    background-color: #2d89ef;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.15s;
+    margin: 0;
+    padding: 0;
+    line-height: 36px;
+}
+
+.slider-btn:hover {
+    background-color: #17497f;
+    transform: scale(1.1);
+}
+
+.slider-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.slider-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.slider-dot.active {
+    background-color: #2d89ef;
+    transform: scale(1.25);
+}
+
+body.dark-mode .slider-section {
+    background-color: #16213e;
+    color: #e0e0e0;
+}
+
+/* ========================================
+   Accordion (FAQ)
+   ======================================== */
+.accordion-section {
+    background-color: white;
+    width: 85%;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.accordion-item {
+    border: 1px solid #dde4f0;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+}
+
+.accordion-item.open {
+    box-shadow: 0 3px 10px rgba(45,137,239,0.15);
+}
+
+.accordion-header {
+    background-color: #f0f6ff;
+    color: #1f5fa8;
+    padding: 14px 18px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.97rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    width: 100%;
+    text-align: left;
+    margin: 0;
+    transition: background-color 0.2s, color 0.2s;
+    border-radius: 0;
+}
+
+.accordion-header:hover {
+    background-color: #dbeaff;
+    transform: none;
+}
+
+.accordion-icon {
+    font-size: 1.1rem;
+    transition: transform 0.3s;
+    font-style: normal;
+}
+
+.accordion-item.open .accordion-icon {
+    transform: rotate(45deg);
+}
+
+.accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    padding: 0 18px;
+    background-color: white;
+    color: #444;
+    font-size: 0.93rem;
+    line-height: 1.7;
+}
+
+.accordion-body p {
+    margin: 14px 0;
+}
+
+body.dark-mode .accordion-section {
+    background-color: #16213e;
+    color: #e0e0e0;
+}
+
+body.dark-mode .accordion-item {
+    border-color: #444;
+}
+
+body.dark-mode .accordion-header {
+    background-color: #0f3460;
+    color: #7bb8f5;
+}
+
+body.dark-mode .accordion-header:hover {
+    background-color: #163870;
+}
+
+body.dark-mode .accordion-body {
+    background-color: #16213e;
+    color: #ccc;
+}
+
+/* ========================================
+   Fade-in animation for study tips
+   ======================================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0);    }
+}
+/* ========================================
+   Account Created Welcome Message
+   ======================================== */
+.account-created-panel {
+    background-color: #eaf8ef;
+    border: 2px solid #2ecc71;
+    border-radius: 14px;
+    padding: 22px 28px;
+    margin: 25px auto;
+    max-width: 1200px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.10);
+}
+
+.account-created-panel h2 {
+    color: #1e8449;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.account-created-panel p {
+    color: #222;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+body.dark-mode .account-created-panel {
+    background-color: #122b1c;
+    border-color: #2ecc71;
+}
+
+body.dark-mode .account-created-panel h2 {
+    color: #58d68d;
+}
+
+body.dark-mode .account-created-panel p {
+    color: #e0e0e0;
+}
+

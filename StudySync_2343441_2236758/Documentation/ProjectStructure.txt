@@ -1,0 +1,28 @@
+StudySync Final Project Folder Structure
+
+Default.aspx       Redirects to Home.aspx so the website opens correctly from the root URL.
+Home.aspx          Main homepage and study session listing.
+Login.aspx         Student login page with session and cookie support.
+Signup.aspx        Student registration page.
+Dashboard.aspx     Protected dashboard with CRUD operations.
+About.aspx         Project and team information.
+Logout.aspx        Ends the user session.
+Site.master        Shared layout and navigation.
+Web.config         ASP.NET settings, connection string, and default document settings.
+
+App_Code/DatabaseHelper.cs
+    Database creation, table creation, login validation, CRUD methods, and join/leave logic.
+
+App_Data/DatabaseSetup.sql
+    Optional SQL setup script.
+
+CSS/style.css
+    External CSS design file.
+
+Scripts/script.js
+    JavaScript validation, dynamic content, password strength, and dark mode.
+
+Images/photo1.jpg and Images/photo2.jpg
+    Project images used in the website.
+
+ForgotPassword.aspx - Allows registered students to reset/change their password using email and Student ID.
